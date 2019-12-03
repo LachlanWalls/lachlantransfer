@@ -5,8 +5,6 @@ import os
 
 # basic Flask setup
 app = Flask(__name__)
-
-app.secret_key = 'plznohackme'
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 # one gig max file size
 
 
