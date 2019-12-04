@@ -1,0 +1,235 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(54, 26, 117);
+    overflow: hidden;
+}
+
+#nav {
+    height: 48px;
+}
+
+#nav>h4 {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 12px;
+    width: fit-content;
+}
+
+#nav>.pages {
+    position: absolute;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity .2s;
+}
+
+#nav>.pages[hidden] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#nav>.pages::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: white;
+    transition: left .2s;
+}
+
+#nav>.pages[page="send"]::after {
+    left: 20px;
+}
+
+#nav>.pages[page="receive"]::after {
+    left: 100px;
+}
+
+#nav>.pages>div {
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 20px;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: normal;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+#quickstart {
+    position: absolute;
+    z-index: 2;
+    height: 100px;
+    width: 100vw;
+    text-align: center;
+    margin-top: 30vh;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity .2s;
+}
+
+#quickstart[hidden] {
+    pointer-events: none;
+    opacity: 0;
+}
+
+#quickstart>div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    width: 200px;
+    border: 2px solid white;
+    font-size: 32px;
+    line-height: 32px;
+    padding: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(54, 26, 117);
+    transition: all .1s;
+}
+
+#quickstart>div:hover {
+    margin-top: 12px;
+}
+
+#quickstart>div:active {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+}
+
+#maincontainer {
+    position: absolute;
+    width: 200vw;
+    height: calc(100vh - 48px);
+    left: 0;
+    top: 48px;
+    font-size: 0;
+}
+
+#upload,
+#download {
+    display: inline-block;
+    vertical-align: top;
+    width: 100vw;
+    height: calc(100vh - 48px);
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity .2s;
+    font-size: 14px;
+}
+
+#upload[hidden],
+#download[hidden] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#upload {
+    margin-left: -50vw;
+    transition: margin-left .2s;
+}
+
+body[page="send"] #upload {
+    margin-left: 0vw;
+}
+
+body[page="receive"] #upload {
+    margin-left: -100vw;
+}
+
+#upload>.container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#upload>.container>.addfile {
+    position: relative;
+    margin: 24px;
+    border: 2px dashed white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 280px;
+    height: 160px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#upload>.container>.addfile[hovering] {
+    border-color: #f00;
+}
+
+#upload>.container>.addfile>.filedrag {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+}
+
+#upload>.container>.addfile:hover>.filedrag>strong {
+    text-decoration: underline;
+}
+
+#upload>.container>.file {
+    position: relative;
+    margin: 24px;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 280px;
+    height: 160px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(80, 42, 168);
+    text-align: left;
+}
+
+#upload>.container>.file>h3 {
+    font-size: 20px;
+    line-height: 20px;
+    overflow-wrap: break-word;
+}
+
+#upload>.container>.file>p:nth-child(2) {
+    margin-top: 4px;
+}
+
+#upload>.container>.file>p:nth-child(3) {
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 12px;
+}
+
+#upload>.container>.file>form>.submit {
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    cursor: pointer;
+    right: 10px;
+    bottom: 10px;
+}
+
+#upload>.container>.file>form>.submit:hover {
+    text-decoration: underline;
+}
