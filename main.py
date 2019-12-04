@@ -9,7 +9,7 @@ app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 # one gig max file size
 
 
 # functions
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET", "POST"])
 def root():
     if request.method == 'POST':
         if 'file' not in request.files:
