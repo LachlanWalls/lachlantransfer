@@ -76,7 +76,7 @@
 
                 let download = document.createElement("a")
                 download.className = "download"
-                download.href = data.data.filename
+                download.href = "/uploads/" + data.data.filename
                 download.setAttribute("download", data.data.filename.split("/").pop())
                 download.innerHTML = "download"
                 e.target.parentElement.appendChild(download)

@@ -33,3 +33,8 @@ def root():
 @app.route('/public/<path:filename>')
 def asset(filename):
 	return send_from_directory('public', filename, as_attachment=True)
+
+
+@app.route('/uploads/<path:filename>')
+def uploads(filename):
+	return send_from_directory('uploads', filename, as_attachment=True)
