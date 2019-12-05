@@ -105,6 +105,15 @@
         filedrag.addEventListener("drop", fileSelected, false)
     }
 
+    function displayReceivingFiles(files) {
+        files.forEach(file => {
+            let div = document.createElement("div")
+            div.className = "file"
+            div.innerHTML = "<h3>" + file.name + "</h3><a href='/uploads/" + file + "' download='" + file + "'>download</a>"
+            document.querySelector("#download>.container").appendChild(div)
+        })
+    }
+
     function checkForFiles() {
         fetch("/getfiles/" + pagestart, { method: "POST" }).then(res => res.text()).then(resp => {
             console.log(resp)
