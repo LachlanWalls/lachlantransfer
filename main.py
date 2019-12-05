@@ -19,10 +19,9 @@ def root():
         if file.filename == '':
             return redirect(request.url)
 
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['uploads'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['uploads'], filename))
+        return redirect(url_for('uploaded_file', filename=filename))
 
     return render_template('index.html')
 
