@@ -20,7 +20,7 @@ def root():
             return redirect(request.url)
 
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['uploads'], filename))
+        file.save(os.path.join('uploads', filename))
         return redirect(url_for('uploaded_file', filename=filename))
 
     return render_template('index.html')
