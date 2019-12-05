@@ -117,7 +117,8 @@
 
     function checkForFiles() {
         fetch("/getfiles/" + pagestart, { method: "POST" }).then(res => res.text()).then(resp => {
-            displayReceivingFiles(resp.files)
+            let response = JSON.parse(resp)
+            displayReceivingFiles(response.files)
             window.setTimeout(checkForFiles, 5000)
         }).catch(e => {
             console.log(e)
