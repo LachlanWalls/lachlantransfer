@@ -246,7 +246,7 @@ body[page="receive"] #upload {
     width: 280px;
     left: 10px;
     border-radius: 4px;
-    height: 32px;
+    height: 24px;
     bottom: 10px;
 }
 
@@ -255,7 +255,8 @@ body[page="receive"] #upload {
     top: 0;
     left: 0;
     background-color: white;
-    height: 32px;
+    height: 24px;
     width: 0px;
     transition: width .2s;
+    border-radius: 4px;
 }
