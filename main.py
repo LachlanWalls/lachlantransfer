@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, send_from_directory, url_for,
 from pathlib import Path
 from werkzeug.utils import secure_filename
 import os
+import time
 
 # basic Flask setup
 app = Flask(__name__, template_folder="public")
@@ -20,8 +21,8 @@ def root():
             return redirect(request.url)
 
         filename = secure_filename(file.filename)
-        file.save(os.path.join('uploads', filename))
-        return redirect(url_for('uploaded_file', filename=filename))
+        file.save('/home/dynodelc/transfer.dynodel.com/uploads/' + int(round(time.time() * 1000)) + "__" + secure_filename(file.filename))
+        return 'success'
 
     return render_template('index.html')
 

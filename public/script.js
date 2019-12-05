@@ -50,7 +50,7 @@
             } else break
         }
 
-        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><form method=post enctype=multipart/form-data><input type='file' style='display: none'><input class='submit' type='submit' value='UPLOAD'></form>"
+        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><form method=post enctype=multipart/form-data><input type='file' style='display: none' name='file'><input class='submit' type='submit' value='UPLOAD'></form>"
         document.querySelector("#upload>.container").insertBefore(div, document.querySelector("#upload>.container>.addfile"))
         document.querySelector("#upload_" + id + ">form>input").files = files
 
