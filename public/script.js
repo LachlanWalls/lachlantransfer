@@ -55,9 +55,11 @@
         document.querySelector("#upload_" + id + ">input").files = files
 
         document.querySelector("#upload_" + id + ">button").addEventListener("click", e => {
+            var data = new FormData()
+            data.append('file', e.target.parentElement.querySelector("input").files[0])
             fetch('/', {
                 method: 'POST',
-                body: e.target.parentElement.querySelector("input").files[0]
+                body: data
             }).then(response => response.text()).then(res => {
                 console.log(res)
             }).catch(error => console.log(error))
