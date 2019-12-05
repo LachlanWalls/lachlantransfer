@@ -103,4 +103,14 @@
         filedrag.addEventListener("drop", fileSelected, false)
     }
 
+    function checkForFiles() {
+        fetch("/getfiles/" + Date.now(), { method: "POST" }).then(res => res.text()).then(resp => {
+            console.log(resp)
+            window.setTimeout(checkForFiles, 5000)
+        }).catch(e => {
+            console.log(e)
+            window.setTimeout(checkForFiles, 5000)
+        })
+    }
+
 })();

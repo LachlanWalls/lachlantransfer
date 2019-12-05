@@ -38,3 +38,16 @@ def asset(filename):
 @app.route('/uploads/<path:filename>')
 def uploads(filename):
 	return send_from_directory('uploads', filename, as_attachment=True)
+
+
+@app.route('/getfiles/<since>', methods=["POST"])
+def getfiles(since):
+    files = os.listdir("/home/dynodelc/transfer.dynodel.com/uploads")
+    filessince = []
+
+    for file in files:
+        filet = int(file.split("__")[0])
+        if (filet > int(since)):
+            filessince.append(file)
+
+    return '{"files": ' + str(filessince).replace("'", '"') + '}'
