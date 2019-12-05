@@ -106,11 +106,11 @@
     }
 
     function displayReceivingFiles(files) {
-        document.querySelector("#download>.container").innerHTML = ""
+        document.querySelector("#download>.container").innerHTML = (files.length == 0) ? "No files to receive." : ""
         files.forEach(file => {
             let div = document.createElement("div")
             div.className = "file"
-            div.innerHTML = "<h3>" + file.name + "</h3><a href='/uploads/" + file + "' download='" + file + "'>download</a>"
+            div.innerHTML = "<h3>" + file.split("__")[1] + "</h3><a href='/uploads/" + file + "' download='" + file + "'>download</a>"
             document.querySelector("#download>.container").appendChild(div)
         })
     }

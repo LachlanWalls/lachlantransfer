@@ -288,13 +288,14 @@ body[page="receive"] #upload {
 }
 
 #download>.container>.file>h3 {
+    margin-top: 8px;
     font-size: 20px;
     line-height: 20px;
     overflow-wrap: break-word;
 }
 
-#download>.container>.file>.download {
+#download>.container>.file>a {
     position: relative;
-    top: 16px;
+    top: 24px;
     color: white;
 }
