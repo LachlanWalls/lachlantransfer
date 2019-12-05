@@ -240,3 +240,22 @@ body[page="receive"] #upload {
 #upload>.container>.file>button:active {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
+#upload>.container>.file>.loader {
+    position: absolute;
+    width: 280px;
+    left: 10px;
+    border-radius: 4px;
+    height: 32px;
+    bottom: 10px;
+}
+
+#upload>.container>.file>.loader>.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    height: 32px;
+    width: 0px;
+    transition: width .2s;
+}

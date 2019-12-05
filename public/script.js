@@ -50,24 +50,33 @@
             } else break
         }
 
-        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><input type='file' style='display: none'><button>UPLOAD</button>"
+        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><input type='file' style='display: none'><button>UPLOAD</button><div class='loader' style='display: none;'><div class='progress'></div></div>"
         document.querySelector("#upload>.container").insertBefore(div, document.querySelector("#upload>.container>.addfile"))
         document.querySelector("#upload_" + id + ">input").files = files
 
         document.querySelector("#upload_" + id + ">button").addEventListener("click", e => {
             var data = new FormData()
             data.append('file', e.target.parentElement.querySelector("input").files[0])
+
+            e.target.style.display = "none"
+            e.target.parentElement.querySelector(".loader").style.display = "block"
+
             axios.request({
                 method: "post",
                 url: "/",
                 data: data,
                 onUploadProgress: p => {
-                    console.log(p)
+                    e.target.parentElement.querySelector(".loader>.progress").style.width = (p.loaded / p.total) * 280 + "px"
                 }
             }).then(data => {
-                console.log(data)
+                e.target.style.display = "block"
+                e.target.parentElement.querySelector(".loader").style.display = "none"
+                e.target.innerHTML = "UPLOADED SUCCESSFULLY"
+                e.target.style.pointerEvents = "none"
             }).catch(error => {
-                console.log(error)
+                e.target.style.display = "block"
+                e.target.parentElement.querySelector(".loader").style.display = "none"
+                e.target.innerHTML = "FAILED. TRY AGAIN?"
             })
         })
 
