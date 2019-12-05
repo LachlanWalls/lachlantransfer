@@ -73,6 +73,14 @@
                 e.target.parentElement.querySelector(".loader").style.display = "none"
                 e.target.innerHTML = "UPLOADED SUCCESSFULLY"
                 e.target.style.pointerEvents = "none"
+
+                let download = document.createElement("a")
+                download.className = "download"
+                download.href = data.data.filename
+                download.setAttribute("download", data.data.filename.split("/").pop())
+                download.innerHTML = "download"
+                e.target.parentElement.appendChild(download)
+
             }).catch(error => {
                 e.target.style.display = "block"
                 e.target.parentElement.querySelector(".loader").style.display = "none"

@@ -216,6 +216,12 @@ body[page="receive"] #upload {
     margin-top: 12px;
 }
 
+#upload>.container>.file>.download {
+    position: relative;
+    top: 10px;
+    color: white;
+}
+
 #upload>.container>.file>button {
     position: absolute;
     background: transparent;
