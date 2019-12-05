@@ -106,6 +106,7 @@
     }
 
     function displayReceivingFiles(files) {
+        document.querySelector("#download>.container").innerHTML = ""
         files.forEach(file => {
             let div = document.createElement("div")
             div.className = "file"
@@ -116,7 +117,7 @@
 
     function checkForFiles() {
         fetch("/getfiles/" + pagestart, { method: "POST" }).then(res => res.text()).then(resp => {
-            console.log(resp)
+            displayReceivingFiles(resp.files)
             window.setTimeout(checkForFiles, 5000)
         }).catch(e => {
             console.log(e)
