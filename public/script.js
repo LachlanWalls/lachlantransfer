@@ -1,5 +1,7 @@
 (function() {
 
+    let pagestart = Date.now()
+
     function setPage(p, qs = false) {
         document.querySelector("#nav>.pages").setAttribute("page", p)
         document.querySelector("body").setAttribute("page", p)
@@ -104,7 +106,7 @@
     }
 
     function checkForFiles() {
-        fetch("/getfiles/" + Date.now(), { method: "POST" }).then(res => res.text()).then(resp => {
+        fetch("/getfiles/" + pagestart, { method: "POST" }).then(res => res.text()).then(resp => {
             console.log(resp)
             window.setTimeout(checkForFiles, 5000)
         }).catch(e => {
