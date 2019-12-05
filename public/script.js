@@ -50,9 +50,16 @@
             } else break
         }
 
-        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><form method=post enctype=multipart/form-data><input type='file' style='display: none' name='file'><input class='submit' type='submit' value='UPLOAD'></form>"
+        div.innerHTML = "<h3>" + file.name + "</h3><p>type: " + file.type + "</p><p>" + size + " " + exts[ei] + "</p><input type='file' style='display: none'><button>UPLOAD</button>"
         document.querySelector("#upload>.container").insertBefore(div, document.querySelector("#upload>.container>.addfile"))
-        document.querySelector("#upload_" + id + ">form>input").files = files
+        document.querySelector("#upload_" + id + ">input").files = files
+
+        document.querySelector("#upload_" + id + ">button").addEventListener("click", e => {
+            fetch('/', {
+                method: 'POST',
+                body: e.target.parentElement.querySelector("input").files[0]
+            }).then(response => response.json()).then(success => console.log(success)).catch(error => console.log(error))
+        })
 
     }
 

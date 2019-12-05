@@ -216,20 +216,27 @@ body[page="receive"] #upload {
     margin-top: 12px;
 }
 
-#upload>.container>.file>form>.submit {
+#upload>.container>.file>button {
     position: absolute;
-    background: none;
+    background: transparent;
     border: none;
     outline: none;
     color: white;
     font-size: 14px;
     font-weight: bold;
-    font-family: 'Roboto';
     cursor: pointer;
-    right: 10px;
+    width: 280px;
+    left: 10px;
+    border-radius: 4px;
+    height: 32px;
     bottom: 10px;
+    transition: background-color .2s;
 }
 
-#upload>.container>.file>form>.submit:hover {
-    text-decoration: underline;
+#upload>.container>.file>button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#upload>.container>.file>button:active {
+    background-color: rgba(255, 255, 255, 0.4);
 }

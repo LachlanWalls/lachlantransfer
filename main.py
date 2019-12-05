@@ -20,7 +20,6 @@ def root():
         if file.filename == '':
             return redirect(request.url)
 
-        filename = secure_filename(file.filename)
         file.save('/home/dynodelc/transfer.dynodel.com/uploads/' + int(round(time.time() * 1000)) + "__" + secure_filename(file.filename))
         return 'success'
 
