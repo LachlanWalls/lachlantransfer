@@ -58,7 +58,9 @@
             fetch('/', {
                 method: 'POST',
                 body: e.target.parentElement.querySelector("input").files[0]
-            }).then(response => response.json()).then(success => console.log(success)).catch(error => console.log(error))
+            }).then(response => response.text()).then(res => {
+                console.log(res)
+            }).catch(error => console.log(error))
         })
 
     }
