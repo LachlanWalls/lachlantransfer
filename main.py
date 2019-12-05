@@ -14,14 +14,17 @@ app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 # one gig max file size
 def root():
     if request.method == 'POST':
         if 'file' not in request.files:
-            return redirect(request.url)
+            print(request)
+            return '{"error": "no file in request.files"}'
 
         file = request.files['file']
         if file.filename == '':
-            return redirect(request.url)
+            print(request)
+            return '{"error": "filename is empty"}'
 
-        file.save('/home/dynodelc/transfer.dynodel.com/uploads/' + int(round(time.time() * 1000)) + "__" + secure_filename(file.filename))
-        return 'success'
+        filename = int(round(time.time() * 1000)) + "__" + secure_filename(file.filename)
+        file.save('/home/dynodelc/transfer.dynodel.com/uploads/' + filename)
+        return '{"filename": "' + filename + '"}'
 
     return render_template('index.html')
 
