@@ -57,12 +57,18 @@
         document.querySelector("#upload_" + id + ">button").addEventListener("click", e => {
             var data = new FormData()
             data.append('file', e.target.parentElement.querySelector("input").files[0])
-            fetch('/', {
-                method: 'POST',
-                body: data
-            }).then(response => response.text()).then(res => {
-                console.log(res)
-            }).catch(error => console.log(error))
+            axios.request({
+                method: "post",
+                url: "/",
+                data: data,
+                onUploadProgress: p => {
+                    console.log(p)
+                }
+            }).then(data => {
+                console.log(data)
+            }).catch(error => {
+                console.log(error)
+            })
         })
 
     }
