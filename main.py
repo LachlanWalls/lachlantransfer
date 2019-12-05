@@ -21,7 +21,7 @@ def root():
             if file.filename == '':
                 return '{"error": "filename is empty"}'
 
-            filename = int(round(time.time() * 1000)) + "__" + secure_filename(file.filename)
+            filename = str(round(time.time() * 1000)) + "__" + secure_filename(file.filename)
             file.save('/home/dynodelc/transfer.dynodel.com/uploads/' + filename)
             return '{"filename": "' + filename + '"}'
         except Exception as e:
