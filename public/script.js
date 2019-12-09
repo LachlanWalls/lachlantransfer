@@ -165,7 +165,18 @@ function setLanguage(code) {
         files.forEach(file => {
             let div = document.createElement("div")
             div.className = "file"
-            div.innerHTML = "<h3>" + file.split("__")[1] + "</h3><a href='/uploads/" + file + "' download='" + file + "'>" + txt.download + "</a>"
+
+            let size = file[1]
+            let exts = [txt.bytes, txt.kilobytes, txt.megabytes]
+            let ei = 0
+            while (size > 1000) {
+                if (ei < 2) {
+                    ei += 1
+                    size = Math.round(size / 10) / 100
+                } else break
+            }
+
+            div.innerHTML = "<h3>" + file[0].split("__")[1] + "</h3><p>" + MimeType.lookup(file[0]) + "</p><p>" + size + " " + exts[ei] + "</p><a href='/uploads/" + file[0] + "' download='" + file[0] + "'>" + txt.download + "</a>"
             document.querySelector("#download>.container").appendChild(div)
         })
     }

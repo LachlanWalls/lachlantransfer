@@ -48,7 +48,8 @@ def getfiles(since):
     for file in files:
         filet = int(file.split("__")[0])
         if (filet > int(since)):
-            filessince.append(file)
+            st = os.stat("/home/dynodelc/transfer.dynodel.com/uploads/" + file)
+            filessince.append([file, st])
 
     return '{"files": ' + str(filessince).replace("'", '"') + '}'
 

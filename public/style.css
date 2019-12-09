@@ -270,6 +270,8 @@ body #upload .container .file .download {
   position: relative;
   top: 10px;
   color: white;
+  -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
 }
 
 body #upload .container .file button {
@@ -363,9 +365,26 @@ body[page="receive"] #upload {
   color: #ff5e00;
 }
 
+#download > .container .file p:nth-child(2) {
+  margin-top: 4px;
+  -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+#download > .container .file p:nth-child(3) {
+  font-size: 14px;
+  line-height: 14px;
+  margin-top: 12px;
+  -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
 #download > .container .file a {
   position: relative;
-  top: 24px;
+  top: 14px;
   color: white;
+  -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */
