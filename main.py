@@ -51,3 +51,8 @@ def getfiles(since):
             filessince.append(file)
 
     return '{"files": ' + str(filessince).replace("'", '"') + '}'
+
+
+@app.route('/<lang>', methods=["GET"])
+def root_lang(lang):
+    return redirect("https://transfer.dynodel.com/?lang=" + lang)
