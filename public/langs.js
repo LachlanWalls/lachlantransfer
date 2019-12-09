@@ -89,6 +89,25 @@ const LANGS = {
         "megabytes": "メガバイト",
         "nofiles": "受信するファイルがありません。"
     },
+    "il": {
+        "title": "lachlantrasferimento",
+        "send": "INVIA",
+        "receive": "RICEVERE",
+        "choose": "Scegli un file",
+        "drop": " o trascina i file qui.",
+        "upload": "caricare",
+        "UPLOAD": "CARICARE",
+        "uploadsucc": "CARICATO CON SUCCESSO",
+        "uploadfail": "FALLIMENTO. RIPROVA?",
+        "download": "scaricare",
+        "DOWNLOAD": "SCARICARE",
+        "type": "genere",
+        "byte": "byte",
+        "kilobytes": "kilobytes",
+        "megabyte": "megabyte",
+        "nofiles": "Nessun file da ricevere."
+
+    },
     "pt": {
         "title": "lachlantransferir",
         "send": "ENVIAR",
