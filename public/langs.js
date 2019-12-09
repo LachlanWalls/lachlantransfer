@@ -89,7 +89,7 @@ const LANGS = {
         "megabytes": "メガバイト",
         "nofiles": "受信するファイルがありません。"
     },
-    "il": {
+    "it": {
         "title": "lachlantrasferimento",
         "send": "INVIA",
         "receive": "RICEVERE",
