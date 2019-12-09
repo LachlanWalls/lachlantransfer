@@ -106,7 +106,7 @@
     }
 
     function displayReceivingFiles(files) {
-        document.querySelector("#download>.container").innerHTML = (files.length == 0) ? "No files to receive." : ""
+        document.querySelector("#download>.container").innerHTML = (files.length == 0) ? "<p>No files to receive.</p>" : ""
         files.forEach(file => {
             let div = document.createElement("div")
             div.className = "file"

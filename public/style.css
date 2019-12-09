@@ -1,301 +1,337 @@
 * {
-    padding: 0;
-    margin: 0;
-    color: white;
-    font-family: 'Asap', sans-serif;
-    font-weight: lighter;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: 'Asap', sans-serif;
+  font-weight: lighter;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(54, 26, 117);
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #ffb96e;
+  background: linear-gradient(45deg, #ffb96e 0%, #ff9999 52%, #ff6bd7 100%);
+  overflow: hidden;
 }
 
 #nav {
-    height: 48px;
+  height: 48px;
 }
 
-#nav>h4 {
-    font-size: 24px;
-    line-height: 24px;
-    margin: 12px;
-    width: fit-content;
+#nav h4 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
 }
 
-#nav>.pages {
-    position: absolute;
-    top: 0;
-    left: 50vw;
-    transform: translateX(-50%);
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity .2s;
+#nav .pages {
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
-#nav>.pages[hidden] {
-    opacity: 0;
-    pointer-events: none;
+#nav .pages div {
+  width: 80px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 20px;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: normal;
+  letter-spacing: 1.1px;
+  cursor: pointer;
 }
 
-#nav>.pages::after {
-    content: "";
-    position: absolute;
-    top: 40px;
-    left: 60px;
-    width: 40px;
-    height: 2px;
-    border-radius: 2px;
-    background-color: white;
-    transition: left .2s;
+#nav .pages[hidden] {
+  opacity: 0;
+  pointer-events: none;
 }
 
-#nav>.pages[page="send"]::after {
-    left: 20px;
+#nav .pages::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  width: 40px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: white;
+  -webkit-transition: left .2s;
+  transition: left .2s;
 }
 
-#nav>.pages[page="receive"]::after {
-    left: 100px;
+#nav .pages[page="send"]::after {
+  left: 20px;
 }
 
-#nav>.pages>div {
-    width: 80px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 16px;
-    margin-top: 20px;
-    display: inline-block;
-    vertical-align: top;
-    font-weight: normal;
-    letter-spacing: 1.1px;
-    cursor: pointer;
+#nav .pages[page="receive"]::after {
+  left: 100px;
 }
 
 #quickstart {
-    position: absolute;
-    z-index: 2;
-    height: 100px;
-    width: 100vw;
-    text-align: center;
-    margin-top: 30vh;
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity .2s;
+  position: absolute;
+  z-index: 2;
+  height: 100px;
+  width: 100vw;
+  text-align: center;
+  margin-top: 30vh;
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 #quickstart[hidden] {
-    pointer-events: none;
-    opacity: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
-#quickstart>div {
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px;
-    width: 200px;
-    border: 2px solid white;
-    font-size: 32px;
-    line-height: 32px;
-    padding: 24px;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: rgb(54, 26, 117);
-    transition: all .1s;
+#quickstart div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  width: 200px;
+  border: 2px solid white;
+  font-size: 32px;
+  line-height: 32px;
+  padding: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6));
+  -webkit-transition: all .1s;
+  transition: all .1s;
 }
 
-#quickstart>div:hover {
-    margin-top: 12px;
+#quickstart div:hover {
+  margin-top: 12px;
 }
 
-#quickstart>div:active {
-    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+#quickstart div:active {
+  -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
 }
 
 #maincontainer {
-    position: absolute;
-    width: 200vw;
-    height: calc(100vh - 48px);
-    left: 0;
-    top: 48px;
-    font-size: 0;
+  position: absolute;
+  width: 200vw;
+  height: calc(100vh - 48px);
+  left: 0;
+  top: 48px;
+  font-size: 0;
 }
 
 #upload,
 #download {
-    display: inline-block;
-    vertical-align: top;
-    width: 100vw;
-    height: calc(100vh - 48px);
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity .2s;
-    font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100vw;
+  height: calc(100vh - 48px);
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  font-size: 14px;
 }
 
 #upload[hidden],
 #download[hidden] {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
-#upload {
-    margin-left: -50vw;
-    transition: margin-left .2s;
+body #upload {
+  margin-left: -50vw;
+  -webkit-transition: margin-left .2s;
+  transition: margin-left .2s;
+}
+
+body #upload .container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+body #upload .container .addfile {
+  position: relative;
+  margin: 24px;
+  border: 2px dashed white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 280px;
+  height: 160px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+body #upload .container .addfile[hovering] {
+  border-color: #f00;
+}
+
+body #upload .container .addfile .filedrag {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 280px;
+  pointer-events: none;
+}
+
+body #upload .container .addfile:hover > .filedrag > strong {
+  text-decoration: underline;
+}
+
+body #upload .container .file {
+  position: relative;
+  margin: 24px;
+  border: 2px solid white;
+  border-radius: 8px;
+  width: 280px;
+  height: 160px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  text-align: left;
+}
+
+body #upload .container .file h3 {
+  font-size: 20px;
+  line-height: 20px;
+  min-height: 24px;
+  overflow-wrap: break-word;
+  color: #ff5e00;
+}
+
+body #upload .container .file p:nth-child(2) {
+  margin-top: 4px;
+  -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+body #upload .container .file p:nth-child(3) {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 12px;
+  -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+body #upload .container .file .download {
+  position: relative;
+  top: 10px;
+  color: white;
+}
+
+body #upload .container .file button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 280px;
+  left: 10px;
+  border-radius: 4px;
+  height: 32px;
+  bottom: 10px;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+}
+
+body #upload .container .file button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body #upload .container .file button:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+body #upload .container .file .loader {
+  position: absolute;
+  width: 280px;
+  left: 10px;
+  border-radius: 4px;
+  height: 24px;
+  bottom: 10px;
+}
+
+body #upload .container .file .loader .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  height: 24px;
+  width: 0px;
+  -webkit-transition: width .2s;
+  transition: width .2s;
+  border-radius: 4px;
 }
 
 body[page="send"] #upload {
-    margin-left: 0vw;
+  margin-left: 0vw;
 }
 
 body[page="receive"] #upload {
-    margin-left: -100vw;
+  margin-left: -100vw;
 }
 
-#upload>.container {
-    width: 100%;
-    height: 100%;
-    text-align: center;
+#download > .container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-#upload>.container>.addfile {
-    position: relative;
-    margin: 24px;
-    border: 2px dashed white;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 280px;
-    height: 160px;
-    padding: 10px;
-    display: inline-block;
-    vertical-align: top;
+#download > .container p {
+  margin-top: 20px;
 }
 
-#upload>.container>.addfile[hovering] {
-    border-color: #f00;
+#download > .container .file {
+  position: relative;
+  margin: 24px;
+  border: 2px solid white;
+  border-radius: 8px;
+  width: 280px;
+  height: 100px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  text-align: center;
 }
 
-#upload>.container>.addfile>.filedrag {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 280px;
+#download > .container .file h3 {
+  margin-top: 8px;
+  font-size: 20px;
+  line-height: 20px;
+  overflow-wrap: break-word;
+  color: #ff5e00;
 }
 
-#upload>.container>.addfile:hover>.filedrag>strong {
-    text-decoration: underline;
+#download > .container .file a {
+  position: relative;
+  top: 24px;
+  color: white;
 }
-
-#upload>.container>.file {
-    position: relative;
-    margin: 24px;
-    border: 2px solid white;
-    border-radius: 8px;
-    width: 280px;
-    height: 160px;
-    padding: 10px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: rgb(80, 42, 168);
-    text-align: left;
-}
-
-#upload>.container>.file>h3 {
-    font-size: 20px;
-    line-height: 20px;
-    overflow-wrap: break-word;
-}
-
-#upload>.container>.file>p:nth-child(2) {
-    margin-top: 4px;
-}
-
-#upload>.container>.file>p:nth-child(3) {
-    font-size: 16px;
-    line-height: 16px;
-    margin-top: 12px;
-}
-
-#upload>.container>.file>.download {
-    position: relative;
-    top: 10px;
-    color: white;
-}
-
-#upload>.container>.file>button {
-    position: absolute;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 280px;
-    left: 10px;
-    border-radius: 4px;
-    height: 32px;
-    bottom: 10px;
-    transition: background-color .2s;
-}
-
-#upload>.container>.file>button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-#upload>.container>.file>button:active {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-#upload>.container>.file>.loader {
-    position: absolute;
-    width: 280px;
-    left: 10px;
-    border-radius: 4px;
-    height: 24px;
-    bottom: 10px;
-}
-
-#upload>.container>.file>.loader>.progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: white;
-    height: 24px;
-    width: 0px;
-    transition: width .2s;
-    border-radius: 4px;
-}
-
-#download>.container {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-#download>.container>.file {
-    position: relative;
-    margin: 24px;
-    border: 2px solid white;
-    border-radius: 8px;
-    width: 280px;
-    height: 100px;
-    padding: 10px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: rgb(80, 42, 168);
-    text-align: center;
-}
-
-#download>.container>.file>h3 {
-    margin-top: 8px;
-    font-size: 20px;
-    line-height: 20px;
-    overflow-wrap: break-word;
-}
-
-#download>.container>.file>a {
-    position: relative;
-    top: 24px;
-    color: white;
-}
+/*# sourceMappingURL=style.css.map */
