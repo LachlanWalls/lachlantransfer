@@ -26,16 +26,12 @@ function setLanguage(code) {
 
     document.title = txt.title
     document.querySelector("#nav>h4").innerHTML = txt.title
-    document.querySelector("#nav>.pages>.upload").innerHTML = txt.UPLOAD
-    document.querySelector("#nav>.pages>.download").innerHTML = txt.DOWNLOAD
-    document.querySelector("#quickstart>.upload").innerHTML = txt.UPLOAD
-    document.querySelector("#quickstart>.download").innerHTML = txt.DOWNLOAD
+    document.querySelector("#nav>.pages>.upload").innerHTML = txt.send
+    document.querySelector("#nav>.pages>.download").innerHTML = txt.receive
+    document.querySelector("#quickstart>.upload").innerHTML = txt.send
+    document.querySelector("#quickstart>.download").innerHTML = txt.receive
     document.querySelector("#upload>.container>.addfile>.filedrag").innerHTML = "<strong>" + txt.choose + "</strong>" + txt.drop
     document.querySelector("#download>.container>p").innerHTML = txt.nofiles
-
-    document.querySelector("#nav").setAttribute("show", "")
-    document.querySelector("#quickstart").setAttribute("show", "")
-    document.querySelector("#maincontainer").setAttribute("show", "")
 }
 
 (function() {
@@ -59,6 +55,10 @@ function setLanguage(code) {
 
     // change language if the dropdown is changed, this will also update the cookie for future visits
     document.querySelector("select").addEventListener("change", () => setLanguage(document.querySelector("select").value))
+
+    document.querySelector("#nav").setAttribute("show", "")
+    document.querySelector("#quickstart").setAttribute("show", "")
+    document.querySelector("#maincontainer").setAttribute("show", "")
 
     function setPage(p, qs = false) {
         document.querySelector("#nav>.pages").setAttribute("page", p)
@@ -128,7 +128,7 @@ function setLanguage(code) {
             }).then(data => {
                 e.target.style.display = "block"
                 e.target.parentElement.querySelector(".loader").style.display = "none"
-                e.target.innerHTML = txt.UPLOADsucc
+                e.target.innerHTML = txt.uploadsucc
                 e.target.style.pointerEvents = "none"
 
                 let download = document.createElement("a")
@@ -141,7 +141,7 @@ function setLanguage(code) {
             }).catch(error => {
                 e.target.style.display = "block"
                 e.target.parentElement.querySelector(".loader").style.display = "none"
-                e.target.innerHTML = txt.UPLOADfail
+                e.target.innerHTML = txt.uploadfail
             })
         })
 
