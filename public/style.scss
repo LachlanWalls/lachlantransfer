@@ -65,6 +65,28 @@ body {
             left: 100px;
         }
     }
+    select {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        position: absolute;
+        right: 18px;
+        top: 6px;
+        height: 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 0 6px 0 2px;
+        transition: background-color .2s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        &:active {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        option {
+            color: black;
+        }
+    }
 }
 
 #quickstart {
