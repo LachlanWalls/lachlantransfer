@@ -143,5 +143,23 @@ const LANGS = {
         "kilobytes": "千字节",
         "megabytes": "兆字节",
         "nofiles": "没有文件可接收。"
+    },
+    "en-AU": {
+        "title": "lachlantransfer",
+        "send": "out",
+        "receive": "in",
+        "choose": "choose",
+        "drop": " or drop",
+        "upload": "out",
+        "UPLOAD": "out",
+        "uploadsucc": "nah yeah",
+        "uploadfail": "yeah nah. give it another go?",
+        "download": "in",
+        "DOWNLOAD": "in",
+        "type": "type",
+        "bytes": "bytes",
+        "kilobytes": "kilobytes",
+        "megabytes": "megabytes",
+        "nofiles": "nothin here"
     }
 }
