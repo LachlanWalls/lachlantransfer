@@ -1,5 +1,0 @@
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/dynodelc/transfer.dynodel.com"
-PassengerBaseURI "/"
-PassengerPython "/home/dynodelc/virtualenv/transfer.dynodel.com/3.7/bin/python3.7"
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END

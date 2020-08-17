@@ -1,0 +1,13 @@
+{
+  "name": "transfer",
+  "version": "1.0.0",
+  "description": "short-term file transfer system",
+  "main": "main.js",
+  "author": "Lachlan Walls",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "ytdl-core": "^2.1.7"
+  }
+}

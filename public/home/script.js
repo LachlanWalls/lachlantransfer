@@ -24,8 +24,8 @@ function setLanguage(code) {
 
     setCookie("lang", code)
 
-    document.title = txt.title
-    document.querySelector("#nav>h4").innerHTML = txt.title
+    document.title = sitename + (keeptransfer ? txt.title:'')
+    document.querySelector("#nav>h4").innerHTML = sitename + (keeptransfer ? txt.title:'')
     document.querySelector("#nav>.pages>.upload").innerHTML = txt.send
     document.querySelector("#nav>.pages>.download").innerHTML = txt.receive
     document.querySelector("#quickstart>.upload").innerHTML = txt.send
@@ -88,6 +88,7 @@ function setLanguage(code) {
         updateHoverState(e)
         var files = e.target.files || e.dataTransfer.files
         if (files.length > 1) console.error("one file at a time. first file used.")
+        if (files[0].size > maxsize * 1024 * 1024) return alert(`Maximum file upload size is ${maxsize}MB.`)
         addFile(files[0], files)
     }
 
@@ -126,6 +127,8 @@ function setLanguage(code) {
                     e.target.parentElement.querySelector(".loader>.progress").style.width = (p.loaded / p.total) * 280 + "px"
                 }
             }).then(data => {
+                if (data.data.err) throw data.data.err
+
                 e.target.style.display = "block"
                 e.target.parentElement.querySelector(".loader").style.display = "none"
                 e.target.innerHTML = txt.uploadsucc
@@ -142,6 +145,8 @@ function setLanguage(code) {
                 e.target.style.display = "block"
                 e.target.parentElement.querySelector(".loader").style.display = "none"
                 e.target.innerHTML = txt.uploadfail
+
+                console.error(error)
             })
         })
 

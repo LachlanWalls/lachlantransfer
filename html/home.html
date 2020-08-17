@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lachlantransfer</title>
+    <title>%SITENAME%</title>
     <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/home/style.css">
+    <script>
+        const sitename = "%SITENAME%"
+        const keeptransfer = true//KEEPTRANSFER
+        const maxsize = 0//MAXSIZE
+    </script>
 </head>
 
 <body>
     <div id="nav">
-        <h4>lachlantransfer</h4>
+        <h4>%SITENAME%</h4>
         <div class="pages" page="send" hidden>
             <div class="upload">SEND</div>
             <div class="download">RECEIVE</div>
@@ -55,9 +60,9 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/public/mimetype.js"></script>
-    <script src="/public/langs.js"></script>
-    <script src="/public/script.js"></script>
+    <script src="/home/mimetype.js"></script>
+    <script src="/home/langs.js"></script>
+    <script src="/home/script.js"></script>
 </body>
 
 </html>

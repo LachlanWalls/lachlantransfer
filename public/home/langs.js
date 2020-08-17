@@ -1,6 +1,6 @@
 const LANGS = {
     "en": {
-        "title": "lachlantransfer",
+        "title": "transfer",
         "send": "SEND",
         "receive": "RECEIVE",
         "choose": "Choose a file",
@@ -18,7 +18,7 @@ const LANGS = {
         "nofiles": "No files to receive."
     },
     "de": {
-        "title": "lachlanoverdracht",
+        "title": "overdracht",
         "send": "STUREN",
         "receive": "ONTVANGEN",
         "choose": "Kies een bestand",
@@ -36,7 +36,7 @@ const LANGS = {
         "nofiles": "Geen bestanden om te ontvangen."
     },
     "es": {
-        "title": "lachlantransferir",
+        "title": "transferir",
         "send": "ENVIAR",
         "receive": "RECIBIR",
         "choose": "Elegir un archivo",
@@ -54,7 +54,7 @@ const LANGS = {
         "nofiles": "No hay archivos para recibir"
     },
     "fr": {
-        "title": "lachlantransfert",
+        "title": "transfert",
         "send": "ENVOYER",
         "receive": "RECEVOIR",
         "choose": "Choisir un fichier",
@@ -72,7 +72,7 @@ const LANGS = {
         "nofiles": "Aucun fichier à recevoir."
     },
     "ja": {
-        "title": "lachlan転送",
+        "title": "転送",
         "send": "送る",
         "receive": "受け取る",
         "choose": "ファイルを選択してください",
@@ -90,7 +90,7 @@ const LANGS = {
         "nofiles": "受信するファイルがありません。"
     },
     "it": {
-        "title": "lachlantrasferimento",
+        "title": "trasferimento",
         "send": "INVIA",
         "receive": "RICEVERE",
         "choose": "Scegli un file",
@@ -109,7 +109,7 @@ const LANGS = {
 
     },
     "pt": {
-        "title": "lachlantransferir",
+        "title": "transferir",
         "send": "ENVIAR",
         "receive": "RECEBER",
         "choose": "Escolha um arquivo",
@@ -127,7 +127,7 @@ const LANGS = {
         "nofiles": "Nenhum arquivo para receber."
     },
     "zh": {
-        "title": "lachlan传递",
+        "title": "传递",
         "send": "发送",
         "receive": "接收",
         "choose": "选择一个文件",
@@ -145,14 +145,14 @@ const LANGS = {
         "nofiles": "没有文件可接收。"
     },
     "en-AU": {
-        "title": "lachlantransfer",
+        "title": "transfer",
         "send": "out",
         "receive": "in",
         "choose": "choose",
         "drop": " or drop",
         "upload": "out",
         "UPLOAD": "out",
-        "uploadsucc": "nah yeah",
+        "uploadsucc": "nah yeah she'll be right",
         "uploadfail": "yeah nah. give it another go?",
         "download": "in",
         "DOWNLOAD": "in",
@@ -160,6 +160,6 @@ const LANGS = {
         "bytes": "bytes",
         "kilobytes": "kilobytes",
         "megabytes": "megabytes",
-        "nofiles": "nothin here"
+        "nofiles": "nothin' here"
     }
 }
