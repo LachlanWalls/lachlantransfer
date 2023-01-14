@@ -127,7 +127,7 @@ if (process.env.NODE_ENV !== 'development') {
 
   const server = http.createServer(app)
   server.on('upgrade', (req, s, h) => wss.handleUpgrade(req, s, h, ws => wss.emit('connection', ws, req)))
-  server.listen(5173, () => console.log('lachlantransfer online'))
+  server.listen(Number(import.meta.env.PROD_PORT), () => console.log('lachlantransfer online'))
 } else {
   /**
    * When running in development mode (with vite), we only need to start the websocket server
