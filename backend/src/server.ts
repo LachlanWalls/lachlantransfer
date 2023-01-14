@@ -117,7 +117,6 @@ if (process.env.NODE_ENV !== 'development') {
    * This includes returning the compiled files
    */
   const app = express()
-  app.use(express)
   app.use('/upload', router)
   
   app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'index.html')))
