@@ -42,6 +42,7 @@ const allFiles: File[] = []
 export const router = express.Router()
 const upload = multer({
   dest: path.join(__dirname, DIRS.UPLOADS),
+  limits: { files: 1, fileSize: maxFileSize * 1.1 },
   fileFilter (req, _file, callback) {
     const shouldAccept = Number(req.headers['content-length']) <= maxFileSize * 1.1
     return shouldAccept ? callback(null, true) : callback(new Error('file-too-large'))
@@ -117,6 +118,7 @@ if (process.env.NODE_ENV !== 'development') {
    * This includes returning the compiled files
    */
   const app = express()
+  app.use(express)
   app.use('/upload', router)
   
   app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'index.html')))
