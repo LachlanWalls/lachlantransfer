@@ -24,7 +24,11 @@ function getLanguage() {
 export function App() {
   const [language, setLanguage] = useState(getLanguage())
   const l = i18n[language]
-  useEffect(() => { document.title = `lachlan${l.TRANSFER}` }, [language])
+  useEffect(() => {
+    const d = new Date(Date.now() + (100000 * 24 * 60 * 60 * 1000))
+    document.cookie = `lang=${language};expires=${d.toUTCString()};path=/`
+    document.title = `lachlan${l.TRANSFER}`
+  }, [language])
 
   const [state, setState] = useState(States.Connecting)
   const [self, setSelf] = useState<User | null>()
@@ -132,7 +136,7 @@ export function App() {
           </div>
         </div>
 
-        <select onChange={e => setLanguage((e.target as HTMLSelectElement).value as Language)}>
+        <select value={language} onChange={e => setLanguage((e.target as HTMLSelectElement).value as Language)}>
           {languages.map(lang => <option key={lang} value={lang}>{i18n[lang].THIS}</option>)}
         </select>
       </div>
