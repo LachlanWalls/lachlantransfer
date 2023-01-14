@@ -42,7 +42,6 @@ const allFiles: File[] = []
 export const router = express.Router()
 const upload = multer({
   dest: path.join(__dirname, DIRS.UPLOADS),
-  limits: { files: 1, fileSize: maxFileSize * 1.1 },
   fileFilter (req, _file, callback) {
     const shouldAccept = Number(req.headers['content-length']) <= maxFileSize * 1.1
     return shouldAccept ? callback(null, true) : callback(new Error('file-too-large'))
