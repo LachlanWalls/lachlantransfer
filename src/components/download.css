@@ -1,0 +1,57 @@
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 180px;
+  max-width: calc(100% - 32px);
+  border: 2px solid rgba(20, 0, 20, 0.4);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  transition: background-color 0.1s;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.download .group {
+  width: 100%;
+  margin-top: 4px;
+  justify-content: center;
+}
+
+.download h3 {
+  margin: 0 0 0 12px;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.download p:nth-child(2) {
+  margin: 4px 0 12px 0;
+}
+
+.download p:nth-child(2) > span {
+  display: inline-block;
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+.download:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.download p:nth-child(3) {
+  margin: 0;
+}
+
+.download:hover p:nth-child(3) {
+  text-decoration: underline;
+}
