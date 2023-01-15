@@ -1,12 +1,14 @@
 @font-face {
   font-family: Asap;
   src: url('./fonts/Asap-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Asap;
   font-weight: 700;
   src: url('./fonts/Asap-Bold.ttf');
+  font-display: swap;
 }
 
 :root {

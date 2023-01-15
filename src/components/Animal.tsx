@@ -26,6 +26,7 @@ export function Animal (
 
   return <img
     src={`/animals/${name}.svg`}
+    alt={`${name} icon`}
     width={size * 20}
     height={size * 20}
     style={{
