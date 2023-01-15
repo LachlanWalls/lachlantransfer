@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lachlantransfer</title>
+    <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <div id="nav">
+        <h4>lachlantransfer</h4>
+        <div class="pages" page="send" hidden>
+            <div class="upload">SEND</div>
+            <div class="download">RECEIVE</div>
+        </div>
+        <select>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ja">日本語</option>
+            <option value="it">Italiano</option>
+            <option value="pt">Português</option>
+            <option value="zh">中文(简体)</option>
+            <option value="en-AU">Aussie</option>
+        </select>
+    </div>
+
+    <div id="quickstart">
+        <div class="upload">SEND</div>
+        <div class="download">RECEIVE</div>
+    </div>
+
+    <div id="maincontainer">
+        <div id="upload" hidden>
+            <div class="container">
+                <form class="addfile" method="POST" enctype="multipart/form-data">
+                    <input type="file" class="fileselect" name="fileselect" style="display: none;" />
+                    <div class="filedrag"><strong>Choose a file</strong> or drop files here.</div>
+                </form>
+            </div>
+        </div>
+
+        <div id="download" hidden>
+            <div class="container">
+                <p>No files to receive.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Private Tokens: <span>+</span></p>
+        <p>
+            <!--<span>Tutorial</span> -- --><span>Terms & Conditions</span></p>
+        <div></div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/mimetype.js"></script>
+    <script src="/public/langs.js"></script>
+    <script src="/public/script.js"></script>
+</body>
+
+</html>
