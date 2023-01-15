@@ -30,7 +30,7 @@ export function Upload ({ file, token, l }: { file: File, token: string, l: Lang
       method: 'post',
       url: '/upload',
       data,
-      onUploadProgress: p => setProgress(p.progress || 0)
+      onUploadProgress: p => setProgress((p.progress || 0) * 0.9)
     }).then(data => {
       const result = data.data as 'weird-upload' | 'file-too-large' | 'invalid-auth' | 'success'
       if (result === 'success') {
