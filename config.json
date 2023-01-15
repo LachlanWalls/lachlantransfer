@@ -1,8 +1,0 @@
-{
-    "sitename": "lachlan",
-    "transfersuffix": true,
-    "port": 8203,
-    "max_file_age": 3600000,
-    "max_file_size_mb": 100,
-    "sweep_interval": 60000
-}
