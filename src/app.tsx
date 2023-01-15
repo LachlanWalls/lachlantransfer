@@ -154,6 +154,10 @@ export function App() {
         {downloads.map((download, i) => <Download key={i} file={download} l={l}/>)}
         {downloads.length === 0 && <p>{l.NO_DOWNLOADS_YET}</p>}
       </div>
+
+      <div class='footer'>
+        <p>animals from <a href='https://mutant.tech/' target='_blank'>Mutant Standard</a> under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'>CC BY-NC-SA 4.0 Intl</a></p>
+      </div>
     </>
   )
 }

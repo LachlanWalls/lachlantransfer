@@ -83,6 +83,17 @@ select:active {
   border-top: 2px solid rgba(0, 0, 0, 0.15);
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 10px;
+  backdrop-filter: blur(2px);
+}
+
 @media screen and (max-width: 650px) {
   .header {
     padding: 0.6rem 0.4rem 0.6rem 0;
