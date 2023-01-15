@@ -26,3 +26,9 @@ todo: sweep and delete files
 - Look into web workers for performance improvement, especially for the websocket
 - See if the SVG animal icons can be loaded more efficiently
 - Possibly allow users to delete their uploaded files
+
+**Branches**
+
+- `master` (current): v2 of lachlantransfer, as described above
+- `v1`: previous v1 of lachlantransfer, less features, older UI and written in vanilla JS
+- `v0`: original version, similar frontend to `v1` but with a python backend 
