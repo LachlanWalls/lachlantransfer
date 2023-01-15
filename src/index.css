@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Asap;
+  src: url('./fonts/Asap-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Asap;
+  font-weight: 700;
+  src: url('./fonts/Asap-Bold.ttf');
+  font-display: swap;
+}
+
+:root {
+  font-family: Asap, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+
+  color: rgba(20, 0, 20, 0.8);
+  background: #ffb96e;
+  background: linear-gradient(45deg, #ffb96eaa 0%, #ff9999aa 50%, #ff6bd7aa 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#app {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  :root {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #app { padding-top: 5rem }
+}
