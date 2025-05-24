@@ -33,4 +33,4 @@ FROM base AS runner
 WORKDIR /app
 
 COPY --from=builder /build .
-CMD ["sh", "-c", "node ./dist/index.js"]
+CMD ["sh", "-c", "node ./dist/server.js"]
