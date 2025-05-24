@@ -1,5 +1,5 @@
 import { useMemo } from 'preact/hooks'
-import * as mime from 'mime'
+import mime from 'mime'
 import './download.css'
 import { File as IFile } from '../../backend/src/server.js'
 import { formatSize } from './Upload.js'

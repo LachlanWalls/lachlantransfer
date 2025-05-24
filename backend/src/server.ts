@@ -8,8 +8,16 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 // @ts-expect-error allow assigning, will be present after this point
 import.meta.env = dotenv.config().parsed
-const maxFileSize = Number(import.meta.env.VITE_MAX_FILE_SIZE_BYTES)
-const maxUsers = Number(import.meta.env.VITE_MAX_USERS_OVERRIDE)
+
+const maxFileSize = Number(process.env.VITE_MAX_FILE_SIZE_BYTES ?? import.meta.env?.VITE_MAX_FILE_SIZE_BYTES)
+if (isNaN(maxFileSize)) {
+  throw new Error('env: VITE_MAX_FILE_SIZE_BYTES: unspecified or invalid')
+}
+
+const maxUsers = Number(process.env.VITE_MAX_USERS ?? import.meta.env?.VITE_MAX_USERS)
+if (isNaN(maxUsers)) {
+  throw new Error('env: VITE_MAX_USERS: unspecified or invalid')
+}
 
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -61,10 +69,21 @@ router.post('/', (req, res, next) => {
 }, (req, res) => {
   const file = req.file
 
-  if (!file) return res.send('weird-upload')
-  if (file.size > maxFileSize) return res.send('file-too-large')
+  if (!file) {
+    res.send('weird-upload')
+    return
+  }
+
+  if (file.size > maxFileSize) {
+    res.send('file-too-large')
+    return
+  }
+
   const user = allUsers.find(u => u.token === req.body.token)
-  if (!user) return res.send('invalid-auth')
+  if (!user) {
+    res.send('invalid-auth')
+    return
+  }
 
   const f = {
     path: '/uploads' + file.path.split('/uploads')[1],
@@ -75,9 +94,10 @@ router.post('/', (req, res, next) => {
   }
 
   allFiles.push(f)
+
   const pld = JSON.stringify({ op: 'add-file', f })
   Array.from(wss.clients.values()).filter(c => c.readyState === WebSocket.OPEN).forEach(c => c.send(pld))
-  return res.send('success')
+  res.send('success')
 })
 
 export const wss = new WebSocketServer({ clientTracking: true, noServer: true })
@@ -126,12 +146,19 @@ if (process.env.NODE_ENV !== 'development') {
 
   const server = http.createServer(app)
   server.on('upgrade', (req, s, h) => wss.handleUpgrade(req, s, h, ws => wss.emit('connection', ws, req)))
-  server.listen(Number(import.meta.env.PROD_PORT), () => console.log('lachlantransfer online'))
+  
+  let port = Number(process.env.PORT)
+  if (!port || isNaN(port)) {
+    port = 8000
+    console.warn(`env: PORT: unspecified or invalid, defaulting to ${port}`)
+  }
+  
+  server.listen(port, () => console.log('lachlantransfer online'))
 } else {
   /**
    * When running in development mode (with vite), we only need to start the websocket server
    */
   const server = http.createServer()
   server.on('upgrade', (req, s, h) => wss.handleUpgrade(req, s, h, ws => wss.emit('connection', ws, req)))
-  server.listen(5174)
+  server.listen(7711)
 }

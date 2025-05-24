@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import * as mime from 'mime'
+import mime from 'mime'
 import './upload.css'
 import axios from 'axios'
 import { LanguageSet } from '../app.js'

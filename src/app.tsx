@@ -43,8 +43,13 @@ export function App() {
   useEffect(() => {
     let ws: WebSocket
     try {
-      const url = location.origin.replace('https', 'wss').replace('http', 'ws')
-      ws = new WebSocket(import.meta.env.DEV ? url.replace('5173', '5174') : url)
+      let url = location.origin.replace('http', 'ws')
+      if (import.meta.env.DEV) {
+        const port = Number(url.split('://')[1]?.split(':')[1]?.split('/')[0])
+        if (!isNaN(port)) url = url.replace(String(port), '7711')
+      }
+      
+      ws = new WebSocket(url)
     } catch {
       setState(States.Errored)
       return
