@@ -1,5 +1,5 @@
 ### --- Base --- ###
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 ARG VITE_MAX_FILE_SIZE_BYTES
 ARG VITE_MAX_USERS
