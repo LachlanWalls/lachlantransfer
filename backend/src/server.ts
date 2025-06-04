@@ -154,6 +154,10 @@ if (process.env.NODE_ENV !== 'development') {
   }
   
   server.listen(port, () => console.log('lachlantransfer online'))
+
+  // immediately exit when a docker stop signal is received
+  process.on('SIGTERM', process.exit)
+  process.on('SIGINT', process.exit)
 } else {
   /**
    * When running in development mode (with vite), we only need to start the websocket server
