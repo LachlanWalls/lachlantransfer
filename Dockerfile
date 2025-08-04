@@ -32,5 +32,7 @@ RUN pnpm prune --prod
 FROM base AS runner
 WORKDIR /app
 
+RUN apk add curl
+
 COPY --from=builder /build .
 CMD ["sh", "-c", "node ./dist/server.js"]
