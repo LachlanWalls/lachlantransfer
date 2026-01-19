@@ -15,7 +15,7 @@
     "express": "^5.1.0",
     "mime": "^4.0.7",
     "multer": "^2.0.2",
-    "preact": "^10.11.3",
+    "preact": "^10.26.10",
     "ws": "^8.17.1"
   },
   "devDependencies": {
