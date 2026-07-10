@@ -3,12 +3,10 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "alwaysStrict": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
 
+    "rootDir": "./src",
     "outDir": "../dist",
 
     "allowUnreachableCode": false,
@@ -20,5 +18,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["src"],
+  "include": ["src"]
 }
